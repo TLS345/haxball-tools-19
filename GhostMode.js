@@ -21,7 +21,7 @@ room.onPlayerChat = function (player, message) {
     const target = room.getPlayerList().find(p => p.name === targetName);
     if (target) {
       makeGhost(target.id, duration);
-      room.send(`${target.name} is now a ghost for ${duration}s`);
+      room.sendAnnouncement(`${target.name} is now a ghost for ${duration}s`);
     }
     return false;
   }
@@ -31,7 +31,7 @@ room.onPlayerChat = function (player, message) {
     const target = room.getPlayerList().find(p => p.name === targetName);
     if (target) {
       removeGhost(target.id);
-      room.send(`${target.name} is back to normal.`);
+      room.sendAnnouncement(`${target.name} is back to normal.`);
     }
     return false;
   }
@@ -57,7 +57,7 @@ function removeGhost(id) {
 function showGhosts(targetId) {
   const now = Date.now();
   if (Object.keys(ghosts).length === 0) {
-    room.send("No active ghosts.", targetId);
+    room.sendAnnouncement("No active ghosts.", targetId);
     return;
   }
 
@@ -71,7 +71,7 @@ function showGhosts(targetId) {
     .filter(Boolean)
     .join(", ");
 
-  room.send(`Active ghosts: ${list}`, targetId);
+  room.sendAnnouncement(`Active ghosts: ${list}`, targetId);
 }
 
 function restoreGhosts() {
