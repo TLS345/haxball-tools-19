@@ -2,7 +2,9 @@
 
 # 👻 Ghost Mode for Haxball Headless
 
-A simple yet fun script that lets you make players *invisible* in Haxball using the Headless API. (Node My Love , i love u ABC i Hate this shitapi)
+A simple yet fun script that lets you make players *invisible* in Haxball using the Headless API. 
+
+(Node My Love , i love u ABC i Hate this shitapi)
 
 Players can move and touch the ball, but no one can see them  — pure stealth mode.
 
